@@ -12,8 +12,8 @@ with DAG (
     # start_date: 전월 말일, END_DATE: 1일 전
     bash_task_1 = BashOperator(
         task_id = 'bash_task_1',
-        env = {'START_DATE': '{{ date_interval_start.in_timezone("Asia/Seoul") | ds }}',
-               'END_DATE' : '{{ date_interval_end.in_timezone("Asia/Seoul") - macros.dateutil.relativedelta.relativedelta(days=1) | ds }}'
+        env = {'START_DATE': '{{ data_interval_start.in_timezone("Asia/Seoul") | ds }}',
+               'END_DATE' : '{{ data_interval_end.in_timezone("Asia/Seoul") - macros.dateutil.relativedelta.relativedelta(days=1) | ds }}'
         },
         bash_command = 'echo "START_DATE: $START_DATE" && echo "END_DATE: $END_DATE"'
     )
