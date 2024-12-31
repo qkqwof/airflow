@@ -6,7 +6,7 @@ from airflow.decorators import task
 from airflow.providers.http.operators.http import SimpleHttpOperator
 
 with DAG(
-    dag_id = "dags_bash_select_fruit",
+    dag_id = "dags_simple_http_operator",
     schedule = None,
     start_date = pendulum.datetime(2023,3,1,tz="Asia/Seoul"),
     catchup = False
